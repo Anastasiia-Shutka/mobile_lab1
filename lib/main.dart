@@ -154,4 +154,4 @@ class _PartyLampPageState extends State<PartyLampPage> {
       ),
     );
   }
-}
+} // Final version for submission
