@@ -14,10 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        brightness: Brightness.dark,
-        useMaterial3: true,
-      ),
+      theme: ThemeData(brightness: Brightness.dark, useMaterial3: true),
       home: const PartyLampPage(),
     );
   }
@@ -80,8 +77,9 @@ class _PartyLampPageState extends State<PartyLampPage> {
   void _startDisco() {
     _partyTimer = Timer.periodic(const Duration(milliseconds: 150), (timer) {
       setState(() {
-        _lampColor = Color((Random().nextDouble() * 0xFFFFFF).toInt())
-        .withValues(alpha: 1);
+        _lampColor = Color(
+          (Random().nextDouble() * 0xFFFFFF).toInt(),
+        ).withValues(alpha: 1);
       });
     });
   }
@@ -96,9 +94,7 @@ class _PartyLampPageState extends State<PartyLampPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('IoT RGB Controller'),
-      ),
+      appBar: AppBar(title: const Text('IoT RGB Controller')),
       body: Center(
         child: SingleChildScrollView(
           child: Column(
@@ -116,11 +112,14 @@ class _PartyLampPageState extends State<PartyLampPage> {
                       color: _lampColor.withValues(alpha: 0.5),
                       blurRadius: 30,
                       spreadRadius: 10,
-                    )
+                    ),
                   ],
                 ),
-                child: const Icon(Icons.lightbulb_outline, size: 70, 
-                color: Colors.white70),
+                child: const Icon(
+                  Icons.lightbulb_outline,
+                  size: 70,
+                  color: Colors.white70,
+                ),
               ),
               const SizedBox(height: 50),
               Padding(
